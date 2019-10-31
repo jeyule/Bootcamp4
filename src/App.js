@@ -3,14 +3,18 @@ import Search from './components/Search';
 import ViewBuilding from './components/ViewBuilding';
 import BuildingList from './components/BuildingList';
 import Credit from './components/Credit';
+import AddBuilding from './components/AddBuilding';
+//import RemoveBuilding from './components/RemoveBuilding';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       filterText: '',
-      selectedBuilding: 0
+      selectedBuilding: 0,
+      index: props.data.length
     };
+    console.log('index', this.state.index)
   }
 
   filterUpdate(value) {
@@ -33,6 +37,20 @@ class App extends React.Component {
     })
   }
 
+  addListing(code, name, latitude, longitude, address) {
+    var id = this.state.index+1;
+
+    var listing = {id: id, code: code, name: name, coordinates: {latitude, longitude},
+      address: address};
+
+    const listingsList = this.props.data.push(listing);
+
+    this.setState({
+      data: listingsList,
+      index: id
+    })
+  }
+
   render() {
     return (
       <div className="bg">
@@ -44,6 +62,12 @@ class App extends React.Component {
           filterText={this.state.filterText}
           filterUpdate={this.filterUpdate.bind(this)}
         />
+
+        <AddBuilding
+          data = {this.props.data}
+          addListing={this.addListing.bind(this)}
+        />
+
         <main>
           <div className="row">
             <div className="column1">

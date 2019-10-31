@@ -60,6 +60,13 @@ td:hover {
 	background-color: #ccdef9;
 }
 
+.column3 {
+	float: left;
+	width: 20%;
+	padding: 1px;
+	background-color: #ffe0e0;
+}
+
 /* ##### Rows ##### */
 .row {
 	margin: 1rem;
