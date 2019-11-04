@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = {
       filterText: '',
       selectedBuilding: 0,
-      index: props.data.length
+      index: props.data.length,
+      toBeDeleted: 0
     };
     console.log('index', this.state.index)
   }
@@ -51,6 +52,15 @@ class App extends React.Component {
     })
   }
 
+  deleteListing(id) {
+    this.props.data[id-1].code = '';
+    this.props.data[id-1].name = '';
+
+    this.setState({
+      data: this.props.data
+    })
+  }
+
   render() {
     return (
       <div className="bg">
@@ -82,6 +92,7 @@ class App extends React.Component {
                     data={this.props.data}
                     filterText={this.state.filterText}
                     selectBuilding={this.selectBuilding.bind(this)}
+                    deleteListing={this.deleteListing.bind(this)}
                   />
                 </table>
               </div>
