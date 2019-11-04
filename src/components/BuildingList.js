@@ -32,9 +32,9 @@ class BuildingList extends React.Component {
 								<td> {directory.name} </td>
 							}
 							{directory.code != '' &&
-								<button onClick={(e) => this.props.deleteListing(directory.id)}>
+								<div className="deleteButton" onClick={(e) => this.props.deleteListing(directory.id)}>
 									Delete
-								</button>
+								</div>
 							}
 						</tr>
 					);

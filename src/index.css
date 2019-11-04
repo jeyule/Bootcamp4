@@ -94,8 +94,11 @@ td:hover {
 	color: #3498bb;
 }
 button {
-	background: #d7d7d7;
-	color: #3b3b3b;
+	background: #4a80ed;
+	color: #ededed;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%); 
 	padding: 0.6rem 1rem;
 	font-size: 0.8rem;
 	border: solid 1px #c7c7c7;
@@ -106,4 +109,22 @@ button {
 }
 button:hover {
 	background: #ddd;
+	color: #404040;
+}
+
+.deleteButton {
+	background: #de1d1d;
+	color: #ededed;
+	padding: 0.6rem 1rem;
+	font-size: 0.8rem;
+	border: solid 1px #c7c7c7;
+	margin: 1rem 0;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	outline: none;
+}
+
+.deleteButton:hover {
+	background: #ddd;
+	color: #404040;
 }
