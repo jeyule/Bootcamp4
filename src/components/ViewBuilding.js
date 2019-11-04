@@ -28,7 +28,7 @@ class ViewBuilding extends React.Component {
 						{' '}
 						<i>Click on a name to view more information</i>
 						
-						{directory && selectedBuilding > 0 &&
+						{directory && directory.code != '' && selectedBuilding > 0 &&
 							<p>
 								<li>Code: {directory.code}</li>
 								<li>Name: {directory.name}</li>
