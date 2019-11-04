@@ -7,7 +7,6 @@ class BuildingList extends React.Component {
 
 			const {data, filterText, selectBuilding} = this.props;
 			
-			//var index = 0
 			
 			const buildingList = data
 
@@ -15,9 +14,6 @@ class BuildingList extends React.Component {
 					return directory.name.toLowerCase().indexOf(filterText.toLowerCase()) >= 0
 				})
 				.map(directory => {
-					//directory.index = index
-					//console.log(index)
-					//index++
 
 					return (
 						
